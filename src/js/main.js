@@ -193,4 +193,42 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = false;
     }
   });
+
+  const bubblesContainer = document.querySelector('.bubbles');
+  const numBubbles = 6;
+
+  for (let i = 0; i < numBubbles; i++) {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+
+    const size = Math.random() * 80 + 40; // от 20px до 60px
+    const posX = Math.random() * window.innerWidth;
+    const posY = Math.random() * window.innerHeight;
+    const duration = Math.random() * 10 + 10; // от 10s до 20s
+
+    // Случайные направления в разные стороны
+    const x1 = `${Math.random() * 100 - 50}px`;
+    const y1 = `${Math.random() * 100 - 50}px`;
+    const x2 = `${Math.random() * 200 - 100}px`;
+    const y2 = `${Math.random() * 200 - 100}px`;
+    const x3 = `${Math.random() * 100 - 50}px`;
+    const y3 = `${Math.random() * 100 - 50}px`;
+
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${posX}px`;
+    bubble.style.top = `${posY}px`;
+    bubble.style.background = 'rgba(124, 13, 124, 0.35)';
+    bubble.style.animationDuration = `${duration}s`;
+
+    // Передаём переменные в анимацию
+    bubble.style.setProperty('--x1', x1);
+    bubble.style.setProperty('--y1', y1);
+    bubble.style.setProperty('--x2', x2);
+    bubble.style.setProperty('--y2', y2);
+    bubble.style.setProperty('--x3', x3);
+    bubble.style.setProperty('--y3', y3);
+
+    bubblesContainer.appendChild(bubble);
+  }
 });
