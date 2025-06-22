@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const portfolioLinks = document.querySelectorAll('.show-full-image');
 
   // Открытие модального окна при клике на кнопку "Смотреть кейс"
-  /*portfolioLinks.forEach(button => {
+  portfolioLinks.forEach(button => {
     button.addEventListener('click', (e) => {
       e.preventDefault();
       const id = button.getAttribute('data-id');
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error(`Атрибут data-full-image не найден для изображения в карточке с data-id="${id}"`);
       }
     });
-  });*/
+  });
 
   // Обработка ошибок загрузки изображения
   fullImage.addEventListener('error', () => {
