@@ -1309,22 +1309,28 @@ img {
 
 .portfolio-modal-close {
   position: absolute;
-  top: 5px;
+  top: 15px;
   right: 5px;
-  color: #fff;
-  font-size: 14px;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  color: white;
+  line-height: 36px;
+  text-align: center;
   cursor: pointer;
   user-select: none;
-  background: #3b4dcb;
-  padding: 5px 10px;
-  border-radius: 20px;
-  border: 1px solid #a1a0ab;
+}
+
+.close:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: black;
 }
 
 /* Для мобильных устройств */
 @media (max-width: 768px) {
   .portfolio-modal-content {
-    max-width: 95%;
+    max-width: 85%;
     /* Больше ширины */
     max-height: 95vh;
     /* Больше высоты */
