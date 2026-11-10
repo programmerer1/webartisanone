@@ -1,234 +1,159 @@
-// Main JavaScript file
-document.addEventListener('DOMContentLoaded', () => {
-  // Portfolio data
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const burgerIcon = document.getElementById('burger-icon');
+const closeIcon = document.getElementById('close-icon');
 
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
+document.getElementById('copyright-year').innerText = (new Date().getFullYear());
 
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target) && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
-      }
-    });
-  }
-
-  // Smooth scrolling for navigation links
-  const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-
-  smoothScrollLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-
-      const targetElement = document.querySelector(targetId);
-      if (!targetElement) return;
-
-      // Close mobile menu if open
-      if (navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
-      }
-
-      // Calculate header height for offset
-      const headerHeight = document.querySelector('.header').offsetHeight;
-
-      // Smooth scroll to target with header offset
-      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-    });
-  });
-
-  // Header scroll effect
-  const header = document.querySelector('.header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      header.classList.add('scrolled');
+function toggleMenu() {
+    const isClosed = !mobileMenu.classList.contains('open');
+    if (isClosed) {
+        mobileMenu.classList.add('open');
+        burgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
     } else {
-      header.classList.remove('scrolled');
+        mobileMenu.classList.remove('open');
+        burgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
     }
-  });
+}
 
-  // Add fade-in animations to sections
-  const sections = document.querySelectorAll('.section');
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+}
 
-  const sectionObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
-      }
+// Close menu on navigation click
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        burgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
     });
-  }, observerOptions);
-
-  sections.forEach(section => {
-    sectionObserver.observe(section);
-  });
-
-  const modal = document.querySelector('#portfolioImageModal');
-  const fullImage = document.querySelector('#portfolioFullImage');
-  const closeBtn = document.querySelector('.portfolio-modal-close');
-  const portfolioLinks = document.querySelectorAll('.show-full-image');
-
-  // Открытие модального окна при клике на кнопку "Смотреть кейс"
-  portfolioLinks.forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      const id = button.getAttribute('data-id');
-      const card = document.querySelector(`.portfolio-card[data-id="${id}"]`);
-      const img = card.querySelector('.portfolio-img');
-      const fullSrc = img.getAttribute('data-full-image');
-      if (fullSrc) {
-        fullImage.src = fullSrc;
-        fullImage.alt = img.alt;
-        modal.style.display = 'flex';
-        modal.setAttribute('tabindex', '-1');
-        modal.focus();
-        document.body.style.overflow = 'hidden'; // Скрываем скролл body
-      } else {
-        console.error(`Атрибут data-full-image не найден для изображения в карточке с data-id="${id}"`);
-      }
-    });
-  });
-
-  // Обработка ошибок загрузки изображения
-  fullImage.addEventListener('error', () => {
-    fullImage.alt = 'Изображение не найдено';
-    fullImage.src = '/src/img/image-not-available.jpg'; // Укажите путь к запасному изображению
-  });
-
-  // Закрытие модального окна по клику на крестик
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = ''; // Восстанавливаем скролл body
-  });
-
-  // Закрытие по клику вне изображения
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      document.body.style.overflow = ''; // Восстанавливаем скролл body
-    }
-  });
-
-  // Закрытие по клавише Esc
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'flex') {
-      modal.style.display = 'none';
-      document.body.style.overflow = ''; // Восстанавливаем скролл body
-    }
-  });
-
-  const form = document.getElementById('contact-form');
-  const loader = document.getElementById('loader');
-  const submitBtn = form.querySelector('.submit-btn');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const messageDiv = document.getElementById('form-message');
-    messageDiv.style.display = 'none';
-    messageDiv.classList.remove('success', 'error');
-
-    const recaptchaResponse = grecaptcha.getResponse();
-    if (!recaptchaResponse) {
-      messageDiv.textContent = 'Zəhmət olmasa, reCAPTCHA yoxlamasından keçin';
-      messageDiv.classList.add('error');
-      messageDiv.style.display = 'block';
-      return;
-    }
-
-    // Показать индикатор загрузки и отключить форму
-    loader.style.display = 'flex';
-    form.classList.add('form-disabled');
-    submitBtn.disabled = true;
-
-    const data = new FormData(form);
-    data.append('g-recaptcha-response', recaptchaResponse);
-
-    try {
-      const response = await fetch('/send.php', {
-        method: 'POST',
-        body: data,
-      });
-
-      const result = await response.json();
-      grecaptcha.reset();
-      messageDiv.textContent = result.message;
-      messageDiv.classList.add(response.ok && result.success ? 'success' : 'error');
-      messageDiv.style.display = 'block';
-
-      if (response.ok && result.success) {
-        form.reset();
-        gtag_report_conversion();
-        fbq('track', 'Contact');
-      }
-    } catch (error) {
-      messageDiv.textContent = 'Xəta baş verdi: ' + error.message;
-      messageDiv.classList.add('error');
-      messageDiv.style.display = 'block';
-    } finally {
-      // Скрыть индикатор загрузки и включить форму
-      loader.style.display = 'none';
-      form.classList.remove('form-disabled');
-      submitBtn.disabled = false;
-    }
-  });
-
-  const bubblesContainer = document.querySelector('.bubbles');
-  const numBubbles = 6;
-
-  for (let i = 0; i < numBubbles; i++) {
-    const bubble = document.createElement('div');
-    bubble.classList.add('bubble');
-
-    const size = Math.random() * 80 + 40; // от 20px до 60px
-    const posX = Math.random() * window.innerWidth;
-    const posY = Math.random() * window.innerHeight;
-    const duration = Math.random() * 10 + 10; // от 10s до 20s
-
-    // Случайные направления в разные стороны
-    const x1 = `${Math.random() * 100 - 50}px`;
-    const y1 = `${Math.random() * 100 - 50}px`;
-    const x2 = `${Math.random() * 200 - 100}px`;
-    const y2 = `${Math.random() * 200 - 100}px`;
-    const x3 = `${Math.random() * 100 - 50}px`;
-    const y3 = `${Math.random() * 100 - 50}px`;
-
-    bubble.style.width = `${size}px`;
-    bubble.style.height = `${size}px`;
-    bubble.style.left = `${posX}px`;
-    bubble.style.top = `${posY}px`;
-    bubble.style.background = 'rgba(124, 13, 124, 0.35)';
-    bubble.style.animationDuration = `${duration}s`;
-
-    // Передаём переменные в анимацию
-    bubble.style.setProperty('--x1', x1);
-    bubble.style.setProperty('--y1', y1);
-    bubble.style.setProperty('--x2', x2);
-    bubble.style.setProperty('--y2', y2);
-    bubble.style.setProperty('--x3', x3);
-    bubble.style.setProperty('--y3', y3);
-
-    bubblesContainer.appendChild(bubble);
-  }
 });
+
+// Smooth scrolling for navigation links
+const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+
+smoothScrollLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (!targetElement) return;
+
+        // Calculate header height for offset
+        const headerHeight = document.querySelector('.header').offsetHeight;
+
+        // Smooth scroll to target with header offset
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
+
+(function () {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const loader = document.getElementById('lightbox-loader');
+    if (!lightbox || !lightboxImg) return;
+
+    let scrollY = 0;
+    let lastFocused = null;
+    let loadToken = 0;
+
+    function lockScroll() {
+        scrollY = window.scrollY || window.pageYOffset;
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.top = `-${scrollY}px`;
+        if (scrollbarWidth > 0) {
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+        }
+        document.documentElement.classList.add('lightbox-open');
+        document.body.classList.add('lightbox-open');
+    }
+
+    function unlockScroll() {
+        document.documentElement.classList.remove('lightbox-open');
+        document.body.classList.remove('lightbox-open');
+        document.body.style.top = '';
+        document.body.style.paddingRight = '';
+        // Возвращаем позицию без анимации плавного скролла
+        const html = document.documentElement;
+        const prev = html.style.scrollBehavior;
+        html.style.scrollBehavior = 'auto';
+        window.scrollTo(0, scrollY);
+        html.style.scrollBehavior = prev;
+    }
+
+    function openLightbox(src, alt) {
+        const token = ++loadToken;
+        lastFocused = document.activeElement;
+
+        lightboxImg.classList.remove('loaded');
+        lightboxImg.alt = alt || '';
+        loader.classList.add('active');
+
+        lightbox.hidden = false;
+        lockScroll();
+        // Следующий кадр, чтобы сработала анимация появления
+        requestAnimationFrame(() => lightbox.classList.add('open'));
+
+        const preload = new Image();
+        preload.onload = preload.onerror = function () {
+            if (token !== loadToken) return; // окно уже закрыли или открыли другое
+            lightboxImg.src = src;
+            lightboxImg.classList.add('loaded');
+            loader.classList.remove('active');
+        };
+        preload.src = src;
+
+        lightbox.querySelector('.lightbox-close').focus({ preventScroll: true });
+    }
+
+    function closeLightbox() {
+        if (!lightbox.classList.contains('open')) return;
+        loadToken++;
+        lightbox.classList.remove('open');
+        unlockScroll();
+        setTimeout(() => {
+            if (!lightbox.classList.contains('open')) {
+                lightbox.hidden = true;
+                lightboxImg.removeAttribute('src');
+                lightboxImg.classList.remove('loaded');
+            }
+        }, 260);
+        if (lastFocused && lastFocused.focus) {
+            lastFocused.focus({ preventScroll: true });
+        }
+    }
+
+    // Открытие по клику на превью (делегирование событий)
+    document.addEventListener('click', function (e) {
+        const img = e.target.closest('.project-card-img[data-full-image]');
+        if (img) {
+            openLightbox(img.dataset.fullImage, img.alt);
+            return;
+        }
+        if (e.target.closest('[data-lightbox-close]')) {
+            closeLightbox();
+        }
+    });
+
+    // Закрытие по Esc
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Закрытие по клику на свободное место вокруг картинки
+    lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-stage')) {
+            closeLightbox();
+        }
+    });
+})();

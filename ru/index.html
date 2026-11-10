@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FJ0THPJK6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-4FJ0THPJK6');
+  </script>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>WebArtisan — Разработка сайтов для бизнеса и техподдержка</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/css/style.css?v=1" />
+
+  <link rel="canonical" href="https://webartisan.one/ru" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/src/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/src/favicon/site.webmanifest">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1324900358023501');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1324900358023501&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Event snippet for Клик по номеру телефона, whatsapp. Webartisan conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-823104841/LN6wCJzM2cEaEMmqvogD',
+        'value': 1.0,
+        'currency': 'USD',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <div class="brand-logo">
+          WA
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">
+            WebArtisan
+          </span>
+          <span class="brand-sub">
+            Разработка сайтов для бизнеса
+          </span>
+        </div>
+      </a>
+      <nav class="nav-desktop">
+        <a class="nav-link" href="#about">Обо мне</a>
+        <a class="nav-link" href="#services">Услуги</a>
+        <a class="nav-link" href="#advantages">Преимущества</a>
+        <a class="nav-link" href="#portfolio">Портфолио</a>
+        <a class="nav-link" href="#contacts">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn-header-wa" href="https://wa.me/994516828065" rel="noopener noreferrer" target="_blank"
+          onclick="gtag_report_conversion();fbq('track', 'Contact');">
+          <span class="material-symbols-outlined icon-18" data-icon="chat">chat</span>
+          <span>Написать в WhatsApp</span>
+        </a>
+        <button aria-label="Открыть меню" class="mobile-menu-btn" id="mobile-menu-btn" type="button">
+          <span class="material-symbols-outlined icon-24" id="burger-icon">menu</span>
+          <span class="material-symbols-outlined hidden icon-24" id="close-icon">close</span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-nav">
+        <a class="mobile-nav-link" href="#about">Обо мне</a>
+        <a class="mobile-nav-link" href="#services">Услуги</a>
+        <a class="mobile-nav-link" href="#advantages">Преимущества</a>
+        <a class="mobile-nav-link" href="#portfolio">Портфолио</a>
+        <a class="mobile-nav-link" href="#contacts">Контакты</a>
+        <div class="mobile-menu-cta">
+          <a class="mobile-menu-wa" href="https://wa.me/994516828065" rel="noopener noreferrer" target="_blank"
+            onclick="gtag_report_conversion();fbq('track', 'Contact');">
+            <span class="material-symbols-outlined icon-18">chat</span>
+            <span>Написать в WhatsApp</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="site-main">
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="tech-pill">
+              <span class="pulse-dot-wrap">
+                <span class="pulse-ping"></span>
+                <span class="pulse-dot"></span>
+              </span>
+              <span>Свободен для новых задач</span>
+            </div>
+            <h1 class="hero-title">
+              Делаю сайты для бизнеса и поддерживаю уже работающие
+            </h1>
+            <p class="hero-desc">
+              Разрабатываю сайты и беру на поддержку действующие проекты. Оплата поэтапно, по мере выполнения
+              работ.
+            </p>
+            <div class="chips-group">
+              <span class="chip-item">
+                <span class="material-symbols-outlined chip-icon-verified"
+                  data-icon="verified_user">verified_user</span>
+                <span>Гарантия на код сайта</span>
+              </span>
+              <span class="chip-item">
+                <span class="material-symbols-outlined chip-icon" data-icon="code">code</span>
+                Корректно работает на телефоне и компьютере
+              </span>
+              <span class="chip-item">
+                <span class="material-symbols-outlined chip-icon" data-icon="forum">forum</span>
+                Работаю напрямую, без посредников
+              </span>
+            </div>
+            <div class="hero-actions">
+              <a class="btn-wa-primary" href="https://wa.me/994516828065" rel="noopener noreferrer" target="_blank"
+                onclick="gtag_report_conversion();fbq('track', 'Contact');">
+                <span class="material-symbols-outlined icon-20" data-icon="chat">chat</span>
+                <span>Обсудить проект в WhatsApp</span>
+              </a>
+              <a class="btn-outline" href="#services">
+                <span>Посмотреть услуги</span>
+                <span class="material-symbols-outlined icon-16" data-icon="arrow_forward">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="hero-image-frame">
+              <img alt="Иллюстрация разработки сайтов и рабочих интерфейсов"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4XxrLxPXPIo0fMZJp8DQc741ID1q5RF_JOE0zUo16mbX_CgmS9RlPzedtkpo_R51W1jBZIJlnFQZrE4jvX_K54hTphZWUWXuGwvoxMJ7wU8X3CENDfqfCksJx_hUpoum-VaOdQPYsGKmBfeQD9v9XtBKDtj2RvWdzD5XJFVvSwqSkrI2JHMtlWrXpMv1PO6hMTygW4BPXrB-1QHsgpRtfZijYMcsuCTkZ0AEeFQE"
+                class="hero-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT SECTION -->
+    <section class="section-wrap section-white" id="about">
+      <div class="container">
+        <div class="section-header-about">
+          <div class="section-label">
+            Обо мне
+          </div>
+          <h2 class="section-title">
+            Более 7 лет в веб-разработке
+          </h2>
+        </div>
+        <div class="about-grid">
+          <div>
+            <div class="about-paragraphs">
+              <p>
+                Делаю корпоративные сайты и сайты-визитки, дорабатываю и поддерживаю уже существующие проекты. Работаю в
+                основном с небольшим и средним бизнесом. Сам проектирую, пишу код и отвечаю за результат: вы общаетесь
+                только со мной.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="principles-card">
+              <h3 class="principles-title">Принципы моей работы</h3>
+              <ul class="principles-list">
+                <li class="principle-item">
+                  <span class="material-symbols-outlined principle-icon" data-icon="done_all">done_all</span>
+                  <span>Сначала разбираюсь в задаче, потом называю сроки и стоимость.</span>
+                </li>
+                <li class="principle-item">
+                  <span class="material-symbols-outlined principle-icon" data-icon="done_all">done_all</span>
+                  <span>Оплата по мере выполненных работ.</span>
+                </li>
+                <li class="principle-item">
+                  <span class="material-symbols-outlined principle-icon" data-icon="done_all">done_all</span>
+                  <span>Гарантия на работоспособность и безопасность кода.</span>
+                </li>
+                <li class="principle-item">
+                  <span class="material-symbols-outlined principle-icon" data-icon="done_all">done_all</span>
+                  <span>Отвечаю в течении 15 минут в рабочее время.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SERVICES SECTION -->
+    <section class="section-wrap section-surface" id="services">
+      <div class="container">
+        <div class="section-header-center">
+          <div class="section-label">
+            Ключевые направления
+          </div>
+          <h2 class="section-title">
+            Разработка и поддержка сайтов
+          </h2>
+          <p class="section-subtitle">
+            Занимаюсь разработкой новых сайтов и технической поддержкой уже существующих.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div>
+              <div class="service-topbar">
+                <span class="service-icon-wrap">
+                  <span class="material-symbols-outlined icon-24" data-icon="web">web</span>
+                </span>
+                <span class="chip-code">
+                  Разработка с нуля
+                </span>
+              </div>
+              <h3 class="service-card-title">
+                Разработка сайтов
+              </h3>
+              <p class="service-card-desc">
+                Сайты-визитки и корпоративные сайты. Сайт корректно отображается на телефонах и
+                планшетах, а тексты и цены вы можете менять сами (если нужна админ-панель).
+              </p>
+              <div class="checklist-wrap">
+                <div class="checklist-heading">Что входит в создание сайта:</div>
+                <div class="check-row">
+                  <span class="material-symbols-outlined check-icon" data-icon="check">check</span>
+                  <span>Верстка и программирование сайта.</span>
+                </div>
+                <div class="check-row">
+                  <span class="material-symbols-outlined check-icon" data-icon="check">check</span>
+                  <span>Корректное отображение на телефонах и планшетах.</span>
+                </div>
+                <div class="check-row">
+                  <span class="material-symbols-outlined check-icon" data-icon="check">check</span>
+                  <span>Админ-панель (при необходимости).</span>
+                </div>
+                <div class="check-row">
+                  <span class="material-symbols-outlined check-icon" data-icon="check">check</span>
+                  <span>Интеграция с другими сервисами (при необходимости).</span>
+                </div>
+              </div>
+              <div class="service-meta-box">
+                <span class="service-meta-label">Цена:</span>
+                <span class="service-meta-value">от 250 AZN</span>
+              </div>
+            </div>
+            <a class="btn-card-wa" href="https://wa.me/994516828065" rel="noopener noreferrer" target="_blank"
+              onclick="gtag_report_conversion();fbq('track', 'Contact');">
+              <span class="material-symbols-outlined icon-18" data-icon="chat">chat</span>
+              <span>Узнать подробности в WhatsApp</span>
+            </a>
+          </div>
+          <div class="service-card">
+            <div>
+              <div class="service-topbar">
+                <span class="service-icon-wrap">
+                  <span class="material-symbols-outlined icon-24" data-icon="build">build</span>
+                </span>
+                <span class="chip-code">
+                  Поддержка и администрирование
+                </span>
+              </div>
+              <h3 class="service-card-title">
+                Поддержка и развитие сайтов
+              </h3>
+              <p class="service-card-desc">
+                Помогаю сайту работать без сбоев: устраняю ошибки, добавляю новые разделы и блоки, дорабатываю
+                функционал и слежу за его безопасностью.
+              </p>
+              <div class="checklist-wrap">
+                <div class="checklist-heading">Что входит в сопровождение:</div>
+                <div class="check-row">
+                  <span class="material-symbols-outlined check-icon" data-icon="check">check</span>
+                  <span>Исправление ошибок и поломок.</span>
+                </div>
+                <div class="check-row">
+                  <span class="material-symbols-outlined check-icon" data-icon="check">check</span>
+                  <span>Добавление новых страниц, разделов, блоков, цен и текстов.</span>
+                </div>
+                <div class="check-row">
+                  <span class="material-symbols-outlined check-icon" data-icon="check">check</span>
+                  <span>Доработка существующего функционала.</span>
+                </div>
+                <div class="check-row">
+                  <span class="material-symbols-outlined check-icon" data-icon="check">check</span>
+                  <span>Резервное копирование и проверка безопасности.</span>
+                </div>
+              </div>
+              <div class="service-meta-box">
+                <span class="service-meta-label">Формат взаимодействия:</span>
+                <span class="service-meta-value">Ежемесячный абонемент</span>
+              </div>
+            </div>
+            <a class="btn-card-wa" href="https://wa.me/994516828065" rel="noopener noreferrer" target="_blank"
+              onclick="gtag_report_conversion();fbq('track', 'Contact');">
+              <span class="material-symbols-outlined icon-18" data-icon="chat">chat</span>
+              <span>Узнать подробности в WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-wrap section-white" id="advantages">
+      <div class="container">
+        <div class="section-header-center">
+          <div class="section-label">
+            Прямое сотрудничество
+          </div>
+          <h2 class="section-title">
+            Что вы получаете при работе со мной
+          </h2>
+          <p class="section-subtitle">
+            Вы общаетесь напрямую с тем, кто пишет код, и знаете, за что платите.
+          </p>
+        </div>
+        <div class="advantages-grid">
+          <div class="adv-card">
+            <div>
+              <div class="adv-icon-box">
+                <span class="material-symbols-outlined icon-24" data-icon="forum">forum</span>
+              </div>
+              <h3 class="adv-title">Прямой диалог</h3>
+              <p class="adv-desc">
+                Обсуждаем задачу и правки напрямую в WhatsApp, без посредников.
+              </p>
+            </div>
+            <div class="adv-footer">
+              Диалог в WhatsApp - Быстрый ответ
+            </div>
+          </div>
+          <div class="adv-card">
+            <div>
+              <div class="adv-icon-box">
+                <span class="material-symbols-outlined icon-24" data-icon="code">code</span>
+              </div>
+              <h3 class="adv-title">Мои услуги</h3>
+              <p class="adv-desc">
+                Занимаюсь только созданием и поддержкой сайтов: программирую, верстаю, дорабатываю.
+              </p>
+            </div>
+            <div class="adv-footer">
+              Точечные решения под задачу
+            </div>
+          </div>
+          <div class="adv-card">
+            <div>
+              <div class="adv-icon-box">
+                <span class="material-symbols-outlined icon-24" data-icon="payments">payments</span>
+              </div>
+              <h3 class="adv-title">Прозрачные условия</h3>
+              <p class="adv-desc">
+                Работа делится на этапы, и вы платите по мере выполнения каждого из них. Стоимость этапов согласуем до
+                начала работы.
+              </p>
+            </div>
+            <div class="adv-footer">
+              Фиксация стоимости до старта
+            </div>
+          </div>
+          <div class="adv-card">
+            <div>
+              <div class="adv-icon-box">
+                <span class="material-symbols-outlined icon-24" data-icon="verified">verified</span>
+              </div>
+              <h3 class="adv-title">Ответственность</h3>
+              <p class="adv-desc">
+                После запуска проекта, исправляю ошибки и даю гарантию на его безопасность.
+              </p>
+            </div>
+            <div class="adv-footer">
+              Персональная гарантия
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PORTFOLIO SECTION -->
+    <section class="section-wrap section-surface" id="portfolio">
+      <div class="container">
+        <div class="section-header-center">
+          <div class="section-label">
+            Портфолио проектов
+          </div>
+          <h2 class="section-title">
+            Примеры сайтов, которые я сделал.
+          </h2>
+          <p class="section-subtitle">
+            Реальные проекты: от сайтов-визиток до онлайн-сервисов.
+          </p>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <div>
+              <div class="project-img-frame">
+                <img alt="Сайт главного импортера и официального дистрибьютора LADA в Азербайдане"
+                  class="project-card-img" src="/src/img/xazar-lada-p.jpg" loading="lazy"
+                  data-full-image="/src/img/xazar-lada.jpg" />
+              </div>
+              <h3 class="project-title">
+                Сайт главного импортера и официального дистрибьютора LADA в Азербайдане
+              </h3>
+              <p class="project-desc">
+                Многостраничный сайт импортёра LADA: каталог автомобилей, комплектации и техническая документация.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div>
+              <div class="project-img-frame">
+                <img alt="Сайт бесплатных объявлений транспортных средств" class="project-card-img"
+                  src="/src/img/avtobaza-p.jpg" loading="lazy" data-full-image="/src/img/avtobaza.jpg" />
+              </div>
+              <h3 class="project-title">
+                Сайт бесплатных объявлений транспортных средств
+              </h3>
+              <p class="project-desc">
+                Сайт бесплатных объявлений о продаже автомобилей: поиск с фильтрами и личный кабинет пользователя.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">REDIS</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div>
+              <div class="project-img-frame">
+                <img alt="Сайт бесплатных объявлений об аренде автомобилей" class="project-card-img"
+                  src="/src/img/turborent-p.png" loading="lazy" data-full-image="/src/img/turborent.png" />
+              </div>
+              <h3 class="project-title">
+                Сайт бесплатных объявлений об аренде автомобилей
+              </h3>
+              <p class="project-desc">
+                Сайт бесплатных объявлений об аренде автомобилей: поиск с фильтрами и личный кабинет пользователя.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">REDIS</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div>
+              <div class="project-img-frame">
+                <img alt="Сайт клининговой компании" class="project-card-img" src="/src/img/ecoman-p.png" loading="lazy"
+                  data-full-image="/src/img/ecoman.png" />
+              </div>
+              <h3 class="project-title">
+                Сайт клининговой компании
+              </h3>
+              <p class="project-desc">
+                Многостраничный сайт клининговой компании: описание услуг и форма обратной связи.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div>
+              <div class="project-img-frame">
+                <img alt="Сайт компании по чистке ковров" class="project-card-img" src="/src/img/xalcaci-p.jpg"
+                  loading="lazy" data-full-image="/src/img/xalcaci.jpg" />
+              </div>
+              <h3 class="project-title">
+                Сайт компании по чистке ковров
+              </h3>
+              <p class="project-desc">
+                Многостраничный сайт компании по чистке ковров: описание услуг и форма обратной связи.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div>
+              <div class="project-img-frame">
+                <img alt="Сайт импортера химической продукции" class="project-card-img" src="/src/img/gsolutions-p.jpg"
+                  loading="lazy" data-full-image="/src/img/gsolutions.jpg" />
+              </div>
+              <h3 class="project-title">
+                Сайт импортера химической продукции
+              </h3>
+              <p class="project-desc">
+                Сайт импортёра химической продукции: каталог товаров и онлайн-заявки.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div>
+              <div class="project-img-frame">
+                <img alt="Онлайн-сервис для создания портфолио" class="project-card-img" src="/src/img/msgr-top-p.png"
+                  loading="lazy" data-full-image="/src/img/msgr-top.png" />
+              </div>
+              <h3 class="project-title">
+                Онлайн-сервис для создания портфолио
+              </h3>
+              <p class="project-desc">
+                Сервис для создания онлайн-портфолио: выбор шаблонов и редактирование контента.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">REDIS</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div>
+              <div class="project-img-frame">
+                <img alt="Сайт организатора туров" class="project-card-img" src="/src/img/nyslott-fest-p.png"
+                  loading="lazy" data-full-image="/src/img/nyslott-fest.png" />
+              </div>
+              <h3 class="project-title">
+                Сайт организатора туров
+              </h3>
+              <p class="project-desc">
+                Сайт организатора туров на международный оперный фестиваль в Савонлинне.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-wrap section-white" id="contacts">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-glow"></div>
+          <div class="cta-inner">
+            <div class="tech-pill cta-pill">
+              Быстрый старт
+            </div>
+            <h2 class="section-title cta-title">
+              Есть проект или нужна поддержка сайта?
+            </h2>
+            <p class="hero-desc cta-desc">
+              Напишите мне в WhatsApp и расскажите о задаче.
+            </p>
+            <div class="cta-buttons">
+              <a class="btn-cta-wa" href="https://wa.me/994516828065" rel="noopener noreferrer" target="_blank"
+                onclick="gtag_report_conversion();fbq('track', 'Contact');">
+                <span class="material-symbols-outlined icon-24" data-icon="chat">chat</span>
+                <span>Открыть чат в WhatsApp</span>
+              </a>
+            </div>
+            <div class="phone-contact">
+              <span class="material-symbols-outlined phone-icon" data-icon="call">call</span>
+              <span>Телефон: <a href="tel:+994516828065">(51) 682-80-65</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-title">
+          WebArtisan
+        </div>
+        <p class="footer-copy">
+          © <span id="copyright-year"></span> Разработка и техническая поддержка сайтов.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a class="footer-link" href="#about">Обо мне</a>
+        <a class="footer-link" href="#services">Услуги</a>
+        <a class="footer-link" href="#advantages">Преимущества</a>
+        <a class="footer-link" href="#portfolio">Портфолио</a>
+        <a class="footer-link" href="#contacts">Контакты</a>
+        <a class="footer-link" href="/agreement.html">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+  <div class="floating-wa">
+    <a aria-label="Чат в WhatsApp" class="floating-wa-btn" href="https://wa.me/994516828065" rel="noopener noreferrer"
+      target="_blank" onclick="gtag_report_conversion();fbq('track', 'Contact');">
+      <div class="wa-avatar">
+        <span class="material-symbols-outlined icon-20" data-icon="chat">chat</span>
+        <span class="wa-online-dot"></span>
+      </div>
+      <div class="wa-info">
+        <span class="wa-name">Онлайн</span>
+        <span class="wa-subtext">Напишите в WhatsApp</span>
+      </div>
+    </a>
+  </div>
+  <!-- Image Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр изображения" hidden>
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <button class="lightbox-close" type="button" aria-label="Закрыть" data-lightbox-close>
+      <span class="material-symbols-outlined icon-24">close</span>
+    </button>
+    <div class="lightbox-stage">
+      <div class="lightbox-loader" id="lightbox-loader"></div>
+      <img class="lightbox-img" id="lightbox-img" alt="" />
+    </div>
+  </div>
+  <script src="/src/js/main.js"></script>
+</body>
+
+</html>
